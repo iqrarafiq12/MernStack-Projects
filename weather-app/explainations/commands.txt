@@ -1,0 +1,25 @@
+PACKAGES I USE...
+
+To use this code, i install the following packages:
+
+1. React
+2. Axios
+3. Tailwind CSS
+
+
+
+This code defines a functional component named `WeatherApp` that displays a simple weather app.The app uses the `useState` hook from React to manage two state variables - `weather` and`city`.It also uses the `axios` library to make a GET request to the OpenWeatherMap API to fetch weather data based on the city entered by the user.
+
+    Here's what each of the commands used in this code does:
+
+        - `import React, { useState } from "react";`: imports the `React` library and the `useState` hook from React.
+- `import axios from "axios";`: imports the `axios` library to make HTTP requests.
+- `import "tailwindcss/tailwind.css";`: imports the Tailwind CSS framework styles.
+- `const [weather, setWeather] = useState(null);`: initializes a state variable named `weather` with an initial value of `null` and creates a `setWeather` function to update the `weather` state.
+- `const [city, setCity] = useState("");`: initializes a state variable named `city` with an empty string as the initial value and creates a `setCity` function to update the `city` state.
+- `const apiKey = "660af4c5b3096ea7dc4abe592f5d7d01";`: sets the API key for the OpenWeatherMap API.
+- `const getWeatherData = async () => {...}`: defines an asynchronous function named `getWeatherData` that sends a GET request to the OpenWeatherMap API to retrieve weather data for the city entered by the user.It updates the `weather` state variable with the retrieved data.
+- `<div className="flex item-center justify-center flex-col py-20 mx-auto mt-6 mb-6 max-w-sm p-6">...</div>`: defines the main container for the weather app, with Tailwind CSS styles applied.
+- `<input type="text" placeholder="Enter city name" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value={city} onChange={(e) => setCity(e.target.value)}/>`: defines an input field for the user to enter a city name, with Tailwind CSS styles applied.It also sets the `value` property of the input field to the `city` state variable and sets the `onChange` event handler to update the `city` state variable with the value entered by the user.
+- `<button className="shadow appearance-none border rounded-lg w-full py-2 px-3 text-white bg-cyan-900 hover:bg-cyan-700 leading-tight focus:outline-none focus:shadow-outline" onClick={getWeatherData}>Get Weather</button>`: defines a button for the user to click to retrieve weather data for the entered city.It applies Tailwind CSS styles and sets the `onClick` event handler to call the `getWeatherData` function.
+- `{weather && (...)}`: conditionally renders the weather data if it is not`null`.The weather data is displayed in a block with Tailwind CSS styles applied.It shows the name of the city, the temperature, and a weather icon based on the weather condition.
